@@ -59,15 +59,12 @@ module.exports = {
         },
       ],
     },
-    router: {
-      type: 'confirm',
-      message: 'Install vue-router?',
-    },
     unit: {
       type: 'confirm',
       message: 'Set up unit tests',
     },
     runner: {
+      when: 'unit',
       type: 'list',
       message: 'Pick a test runner',
       choices: [
@@ -91,6 +88,7 @@ module.exports = {
     e2e: {
       type: 'confirm',
       message: 'Setup e2e tests with Nightwatch?',
+      default: false
     },
     autoInstall: {
       type: 'list',
