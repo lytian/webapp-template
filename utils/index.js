@@ -5,8 +5,7 @@ const spawn = require('child_process').spawn
 const lintStyles = ['standard', 'airbnb']
 
 /**
- * Sorts dependencies in package.json alphabetically.
- * They are unsorted because they were grouped for the handlebars helpers
+ * 排序package.json的依赖项
  * @param {object} data Data from questionnaire
  */
 exports.sortDependencies = function sortDependencies(data) {
@@ -21,8 +20,8 @@ exports.sortDependencies = function sortDependencies(data) {
 }
 
 /**
- * Runs `npm install` in the project directory
- * @param {string} cwd Path of the created project directory
+ * 在项目路径下运行`npm install`
+ * @param {string} cwd 项目路径
  * @param {object} data Data from questionnaire
  */
 exports.installDependencies = function installDependencies(
@@ -38,8 +37,8 @@ exports.installDependencies = function installDependencies(
 }
 
 /**
- * Runs `npm run lint -- --fix` in the project directory
- * @param {string} cwd Path of the created project directory
+ * 在项目路径下运行`npm run lint -- --fix`
+ * @param {string} cwd 项目路径
  * @param {object} data Data from questionnaire
  */
 exports.runLintFix = function runLintFix(cwd, data, color) {
@@ -62,7 +61,7 @@ exports.runLintFix = function runLintFix(cwd, data, color) {
 }
 
 /**
- * Prints the final message with instructions of necessary next steps.
+ * 打印完成信息以及接下来的步骤
  * @param {Object} data Data from questionnaire.
  */
 exports.printMessage = function printMessage(data, { green, yellow }) {
@@ -78,7 +77,6 @@ To get started:
     )}${lintMsg(data)}npm run dev`
   )}
   
-Documentation can be found at https://vuejs-templates.github.io/webpack
 `
   console.log(message)
 }

@@ -1,14 +1,14 @@
 { 
   "noEscape": true,
   "name": "test",
-  "description": "A Vue.js project",
-  "author": "CircleCI",
-  "build": "runtime",
+  "description": "A webapp project",
+  "author": "Vincent",
+  "build": "standalone",
   "router": false,
-  "lint": true,
+  "lint": false,
   "lintConfig": "standard",
   "unit": true,
   "runner": "jest",
   "e2e": true,
-  "autoInstall": false
+  "autoInstall": true
 }

@@ -15,7 +15,7 @@ const { addTestAnswers } = require('./scenarios')
 
 module.exports = {
   metalsmith: {
-    // When running tests for the template, this adds answers for the selected scenario
+    // 用户选择配置操作
     before: addTestAnswers
   },
   helpers: {
@@ -44,7 +44,7 @@ module.exports = {
       type: 'string',
       required: false,
       message: 'Project description',
-      default: 'A Vue.js project',
+      default: 'A webapp project',
     },
     author: {
       when: 'isNotTest',

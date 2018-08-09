@@ -1,66 +1,39 @@
-# vue-webpack-boilerplate
+# webapp-template
 
-> A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
+> 基于Vue全家桶的webapp项目模板。基础模板是[vue-templates/webpack](https://github.com/vuejs-templates/webpack)，扩展了对axios的封装，
 
-> This template is Vue 2.0 compatible. For Vue 1.x use this command: `vue init webpack#1.0 my-project`
+## 用法
 
-## Documentation
-
-- [For this template](http://vuejs-templates.github.io/webpack): common questions specific to this template are answered and each part is described in greater detail
-- [For Vue 2.0](http://vuejs.org/guide/): general information about how to work with Vue, not specific to this template
-
-## Usage
-
-This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It is recommended to use npm 3+ for a more efficient dependency tree.**
+这个项目模板依赖于[vincent-cli](https://www.npmjs.com/)，vincent-cli是根据[中测信息技术有限公司](http://www.iwiteks.com)需求定制化的一个脚手架。
 
 ``` bash
-$ npm install -g vue-cli
-$ vue init webpack my-project
+$ npm install -g vincent-cli
+$ vincent init webapp my-project
 $ cd my-project
 $ npm install
 $ npm run dev
 ```
 
-This will scaffold the project using the `master` branch. If you wish to use the latest version of the webpack template, do the following instead:
+## 它包含了什么内容？
 
-``` bash
-$ vue init webpack#develop my-project
-```
+- `npm run dev`: 开发环境中
+  - Webpack + `vue-loader` 开发单页面项目.
+  - 热加载
+  - 编译错误覆盖
+  - ESLint热检测
+  - src源文件
 
-:warning: **The develop branch is not considered stable and can contain bugs or not build at all, so use at your own risk.**
+- `npm run build`: 构建打包项目
+  - 用[UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony)压缩JavaScript
+  - 用[html-minifier](https://github.com/kangax/html-minifier)压缩HTML
+  - 用[cssnano](https://github.com/ben-eb/cssnano)提取css到单个文件中，并将其缩小
+  - 以hash模式编译静态资源，用于长效的保存，并生成对应的
+  - `npm run build --report`使用bundle大小分析算法构建
+  - axios的针对性封装
+  - 基础css重置
+  - 通用class封装
+  - 使用stylus全局变量、方法封装。可以做主题定制化等
+  - 基于mint-ui的页面框架
+  - 一些页面适配处理
+  - dom操作、native交互、本地化存储等一些工具类封装
 
-The development server will run on port 8080 by default. If that port is already in use on your machine, the next free port will be used.
-
-## What's Included
-
-- `npm run dev`: first-in-class development experience.
-  - Webpack + `vue-loader` for single file Vue components.
-  - State preserving hot-reload
-  - State preserving compilation error overlay
-  - Lint-on-save with ESLint
-  - Source maps
-
-- `npm run build`: Production ready build.
-  - JavaScript minified with [UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony).
-  - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
-  - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
-  - Static assets compiled with version hashes for efficient long-term caching, and an auto-generated production `index.html` with proper URLs to these generated assets.
-  - Use `npm run build --report`to build with bundle size analytics.
-
-- `npm run unit`: Unit tests run in [JSDOM](https://github.com/tmpvar/jsdom) with [Jest](https://facebook.github.io/jest/), or in PhantomJS with Karma + Mocha + karma-webpack.
-  - Supports ES2015+ in test files.
-  - Easy mocking.
-
-- `npm run e2e`: End-to-end tests with [Nightwatch](http://nightwatchjs.org/).
-  - Run tests in multiple browsers in parallel.
-  - Works with one command out of the box:
-    - Selenium and chromedriver dependencies automatically handled.
-    - Automatically spawns the Selenium server.
-
-### Fork It And Make Your Own
-
-You can fork this repo to create your own boilerplate, and use it with `vue-cli`:
-
-``` bash
-vue init username/repo my-project
-```
