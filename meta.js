@@ -123,7 +123,7 @@ module.exports = {
     'test/unit/karma.conf.js': "unit && runner === 'karma'",
     'test/unit/specs/index.js': "unit && runner === 'karma'",
     'test/unit/setup.js': "unit && runner === 'jest'",
-    'test/e2e/**/*': 'e2e',
+    'test/e2e/**/*': 'e2e'
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
