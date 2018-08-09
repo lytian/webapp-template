@@ -1,0 +1,112 @@
+@import 'variable.styl'
+
+*
+  margin 0
+  padding 0
+  user-select none  // 不可选(stylus编译的时候会生成其他几种兼容的写法)
+  -webkit-tap-highlight-color transparent // 去除IOS点击后的阴影
+
+[contenteditable="true"],
+input,
+textarea
+  user-select: auto !important
+  // caret-color:#70c414 //  光标颜色
+  -webkit-appearance none //  去掉内阴影
+
+input::-webkit-input-placeholder
+    color #d8d8d8
+
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section
+  display block
+
+body
+  line-height: 1
+  -webkit-text-size-adjust: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+blockquote, q
+  quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after
+  content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+/* custom */
+
+a
+  color: #666
+  -webkit-backface-visibility: hidden
+  text-decoration: none
+
+li
+  list-style: none
+
+/* v-cloak样式处理 */
+
+[v-cloak]
+  display none
+
+/* animate.css 动画时间 */
+.slideInRight, .slideOutRight,
+.bounceInRight, .bounceOutLeft
+  animation-duration .5s
+
+/* 重置mint-ui的一些样式 */
+
+.mint-cell
+  .mint-cell-wrapper
+    padding 0 $padding-horizontal
+  .mint-cell-title
+    color #666666
+    font-size $font-size-medium
+  .mint-cell-allow-right::after
+    width 9px
+    height 9px
+    border-top-width 1.5px
+    border-right-width 1.5px
+    border-color #999
+
+.mint-tab-item-label
+  font-size $font-size-medium
+
+.mint-header
+  padding 0 12px
+.mint-header-title
+  padding-top 1.5px
+  font-size $font-size-large
+.mint-header-button.is-left .mintui
+  font-size $font-size-large
+  padding 10px
+.mint-button
+  box-shadow: 0 3px 10px #a1a1a1
+
+.mint-tabbar>.mint-tab-item.is-selected
+  background-color transparent
+.mint-tab-container-wrap
+  height 100%
+.mint-tab-container-item
+  height 100%
+.mint-tab-item-icon
+  width fit-content
+  height 21px
+  margin 0 auto 6px
+  img
+    width auto
+
+.mint-indicator
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  z-index 500
+
+.mint-msgbox-btn
+  font-size $font-size-medium

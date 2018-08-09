@@ -1,0 +1,40 @@
+@import "variable.styl"
+
+body, html
+  line-height 1
+  font-family 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback'
+  user-select none
+  -webkit-tap-highlight-color transparent
+  background $color-background
+  color $color-text
+  height 100vh
+  overflow hidden
+
+// 纵向滚动
+.scroll-box
+  height 100%
+  overflow-x hidden
+  overflow-y auto
+  -webkit-overflow-scrolling touch
+  -webkit-box-sizing border-box
+// 横向滚动
+.scroll-box-x
+  width 100vw
+  overflow-x auto
+  overflow-y hidden
+  -webkit-overflow-scrolling touch
+  -webkit-box-sizing border-box
+// 去掉滚动条
+.no-scrollbar::-webkit-scrollbar
+    display none
+    height 0
+    width 0
+// 浮动页面
+.fixed-box
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  z-index 100
+  background: $color-background

@@ -1,0 +1,33 @@
+// 背景图片
+bg-image($url)
+  background-size cover
+  background-repeat no-repeat
+  background-image url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image url($url + "@3x.png")
+
+// 单行省略号
+no-wrap()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+// 多行省略号
+no-wrap-n(n)
+  overflow hidden
+  text-overflow ellipsis
+  white-space: unset
+  display -webkit-box
+  -webkit-line-clamp n
+  -webkit-box-orient vertical
+
+// 扩展点击区域
+extend-click()
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: -10px
+    left: -10px
+    right: -10px
+    bottom: -10px
