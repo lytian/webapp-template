@@ -1,4 +1,4 @@
-const scenario = isTest && require(`./full.json`)
+const scenario = require(`./full.json`)
 
 exports.addTestAnswers = (metalsmith, options, helpers) => {
   Object.assign(
