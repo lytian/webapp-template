@@ -62,6 +62,7 @@ module.exports = {
     unit: {
       type: 'confirm',
       message: 'Set up unit tests',
+      default: false
     },
     runner: {
       when: 'unit',
@@ -123,7 +124,6 @@ module.exports = {
     'test/unit/specs/index.js': "unit && runner === 'karma'",
     'test/unit/setup.js': "unit && runner === 'jest'",
     'test/e2e/**/*': 'e2e',
-    'src/router/**/*': 'router',
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
