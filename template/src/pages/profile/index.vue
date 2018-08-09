@@ -36,8 +36,7 @@
 </template>
 
 <script>
-import { MessageBox, Toast, Indicator } from 'mint-ui'
-import { mapGetters } from 'vuex'
+import { Toast } from 'mint-ui'
 
 export default {
   name: 'Profile',

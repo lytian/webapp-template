@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { UPLOAD_URL, BASE_URL, OK } from './config'
+import { BASE_URL, OK } from './config'
 import qs from 'qs'
 import { Indicator, Toast } from 'mint-ui'
 
@@ -132,8 +132,5 @@ export default {
   },
   delete: function (url, params) {
     return apiAxios('DELETE', url, params)
-  },
-  upload: function (url, files) {
-    return uploadFile(url, files)
   }
 }

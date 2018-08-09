@@ -3,3 +3,4 @@ node_modules
 docs/_book
 test/
 .git
+package-lock.json

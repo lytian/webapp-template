@@ -13,9 +13,9 @@ import App from './App'
 import axios from 'api/axiosApi' // 经过封装处理的axiosApi
 import { isIOS, isIphoneX } from 'assets/js/brower'
 import { localUser } from 'assets/js/local'
-import { personifyTime } from 'assets/js/utils'
 import { on } from 'assets/js/dom'
 import FastClick from 'fastclick'
+import VueLazyload from 'vue-lazyload'
 require('promise.prototype.finally').shim() // 低版本浏览器对finally语法支持
 
 if (isIOS()) {
@@ -24,10 +24,6 @@ if (isIOS()) {
   FastClick.prototype.focus = function(targetElement) {
     targetElement.focus()
   }
-  // mint-ui的loadmore组件与fast-click的兼容
-  on(document.getElementsByClassName('mint-loadmore'), 'touchstart', function(event) {
-    event.target.classList.add('needsclick')
-  })
 }
 Vue.config.productionTip = false
 
@@ -46,7 +42,6 @@ Vue.prototype.$tabHeight = 54.8
 
 Vue.use(MintUI)
 Vue.use(VueLazyload)
-Vue.use(VueTouch, { name: 'v-touch' })
 
 // 登录拦截
 router.beforeEach((to, from, next) => {
@@ -63,6 +58,7 @@ router.beforeEach((to, from, next) => {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   {{#if_eq build "runtime"}}
   render: h => h(App)
