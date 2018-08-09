@@ -116,8 +116,6 @@ module.exports = {
     },
   },
   filters: {
-    '.eslintrc.js': true,
-    '.eslintignore': true,
     'config/test.env.js': 'unit || e2e',
     'build/webpack.test.conf.js': "unit && runner === 'karma'",
     'test/unit/**/*': 'unit',
