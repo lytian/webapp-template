@@ -42,22 +42,19 @@ exports.installDependencies = function installDependencies(
  * @param {object} data Data from questionnaire
  */
 exports.runLintFix = function runLintFix(cwd, data, color) {
-  if (data.lint && lintStyles.indexOf(data.lintConfig) !== -1) {
-    console.log(
-      `\n\n${color(
-        'Running eslint --fix to comply with chosen preset rules...'
-      )}`
-    )
-    console.log('# ========================\n')
-    const args =
-      data.autoInstall === 'npm'
-        ? ['run', 'lint', '--', '--fix']
-        : ['run', 'lint', '--fix']
-    return runCommand(data.autoInstall, args, {
-      cwd,
-    })
-  }
-  return Promise.resolve()
+  console.log(
+    `\n\n${color(
+      'Running eslint --fix to comply with chosen preset rules...'
+    )}`
+  )
+  console.log('# ========================\n')
+  const args =
+    data.autoInstall === 'npm'
+      ? ['run', 'lint', '--', '--fix']
+      : ['run', 'lint', '--fix']
+  return runCommand(data.autoInstall, args, {
+    cwd,
+  })
 }
 
 /**
@@ -87,9 +84,7 @@ To get started:
  * @param {Object} data Data from questionnaire.
  */
 function lintMsg(data) {
-  return !data.autoInstall &&
-    data.lint &&
-    lintStyles.indexOf(data.lintConfig) !== -1
+  return !data.autoInstall
     ? 'npm run lint -- --fix (or for yarn: yarn run lint --fix)\n  '
     : ''
 }

@@ -22,6 +22,7 @@ $ npm run dev
   - 编译错误覆盖
   - ESLint热检测
   - src源文件
+  - 强制使用eslint的standard风格
 
 - `npm run build`: 构建打包项目
   - 用[UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony)压缩JavaScript
@@ -36,4 +37,3 @@ $ npm run dev
   - 基于mint-ui的页面框架
   - 一些页面适配处理
   - dom操作、native交互、本地化存储等一些工具类封装
-
