@@ -3,18 +3,18 @@
 *
   margin 0
   padding 0
-  user-select none  // 不可选(stylus编译的时候会生成其他几种兼容的写法)
+  user-select none  // 不可选(postcss编译的时候会生成其他几种兼容的写法)
   -webkit-tap-highlight-color transparent // 去除IOS点击后的阴影
 
 [contenteditable="true"],
 input,
 textarea
   user-select: auto !important
-  // caret-color:#70c414 //  光标颜色
-  -webkit-appearance none //  去掉内阴影
+  // caret-color:#70c414 // 光标颜色
+  -webkit-appearance none // 去掉内阴影
 
 input::-webkit-input-placeholder
-    color #d8d8d8
+    color #d8d8d8 // placeholder颜色
 
 
 /* HTML5 display-role reset for older browsers */
@@ -54,6 +54,7 @@ li
   display none
 
 /* animate.css 动画时间 */
+
 .slideInRight, .slideOutRight,
 .bounceInRight, .bounceOutLeft
   animation-duration .5s

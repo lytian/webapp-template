@@ -7,8 +7,8 @@
       <mt-tab-container-item id="community">
         <community></community>
       </mt-tab-container-item>
-      <mt-tab-container-item id="my">
-        <my></my>
+      <mt-tab-container-item id="profile">
+        <profile></profile>
       </mt-tab-container-item>
     </mt-tab-container>
 

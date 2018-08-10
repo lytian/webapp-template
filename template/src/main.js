@@ -13,7 +13,6 @@ import App from './App'
 import axios from 'api/axiosApi' // 经过封装处理的axiosApi
 import { isIOS, isIphoneX } from 'assets/js/brower'
 import { localUser } from 'assets/js/local'
-import { on } from 'assets/js/dom'
 import FastClick from 'fastclick'
 import VueLazyload from 'vue-lazyload'
 require('promise.prototype.finally').shim() // 低版本浏览器对finally语法支持

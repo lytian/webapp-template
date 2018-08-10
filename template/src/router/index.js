@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import CliDocument from 'pages/document'
+const CliDocument = () => import('pages/document')
+const Login = () => import('pages/profile/login')
 
 Vue.use(Router)
 
@@ -11,6 +12,11 @@ export default new Router({
       path: '/doc',
       name: 'CliDocument',
       component: CliDocument
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })
