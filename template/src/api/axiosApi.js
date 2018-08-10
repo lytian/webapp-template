@@ -23,6 +23,18 @@ function filterNull (o) {
   }
   return o
 }
+/**
+ * 自定义错误类型
+ * type 为1是后台接口返回的错误信息，否则是response返回的错误信息
+ */
+class ApiError extends Error {
+  constructor(code, message, type) {
+    super(message)
+    this.name = 'ApiError'
+    this.code = code
+    this.type = type
+  }
+}
 
 /**
  * 通用的Api处理方法
@@ -58,7 +70,7 @@ function apiAxios (method, url, params) {
           message: res.data.message
         })
       } else {
-        reject(res.data.info)
+        reject(new ApiError(res.data.code, res.data.message, 1))
         console.error('api error: ' + res.data.message)
       }
     }).catch(function (err) {
@@ -109,8 +121,12 @@ function apiAxios (method, url, params) {
           errMsg = '网络请求错误! 详细信息:' + err.message.substring(0, 155)
         }
       }
+      if (err && err.response) {
+        reject(new ApiError(err.response.status, errMsg))
+      } else {
+        reject(new ApiError('axios', errMsg))
+      }
       Toast(errMsg)
-      reject(errMsg)
       if (err) {
         console.error('api error: ' + errMsg)
       }
